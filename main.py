@@ -8,16 +8,16 @@ from models.user_models import UserIn, UserOut
 
 from models.transaction_models import TransactionIn, TransactionOut
 
-from fastapi.middleware.cors import CORSMiddleware
-
 import datetime
 from fastapi import FastAPI, HTTPException
 api = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
 origins = [
     "http://localhost.tiangolo.com", "https://localhost.tiangolo.com",
     "http://localhost", "http://localhost:8080",
-    "https://rrbustosg-cajero-app.herokuapp.com/",
+    "https://rrbustosg-cajero-app.herokuapp.com/", "http://127.0.0.1:8080"
 ]
 api.add_middleware(
     CORSMiddleware, allow_origins=origins,
